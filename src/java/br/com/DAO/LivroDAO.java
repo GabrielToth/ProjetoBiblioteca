@@ -52,5 +52,18 @@ public class LivroDAO {
         return lista;
     }
     
-    
+    public void ExcluirLivro(LivroDTO objLivroDTO) throws ClassNotFoundException, SQLException {
+        String sql = "delete from livro where id_livro = ?";
+        //String sql = "insert into livro {nome_livro, qnt_pag, sla} values {?,?,?}"; etc..
+        con = new ConexaoDAO().conexaoDB();
+        
+        try {
+            pstm = con.prepareStatement(sql);
+            pstm.setInt(1, objLivroDTO.getId_livro());
+            pstm.execute();
+            pstm.close();
+        } catch (SQLException e) {
+            System.out.println("Erro no DAO");
+        }
+    }
 }
