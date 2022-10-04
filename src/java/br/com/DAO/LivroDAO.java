@@ -66,4 +66,20 @@ public class LivroDAO {
             System.out.println("Erro no DAO");
         }
     }
+    
+    public void AlterarLivro(LivroDTO objLivroDTO) throws ClassNotFoundException, SQLException {
+        String sql = "update livro set nome_livro = 'novo_nome' where id_livro = ?";
+        //String sql = "insert into livro {nome_livro, qnt_pag, sla} values {?,?,?}"; etc..
+        con = new ConexaoDAO().conexaoDB();
+        
+        try {
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, objLivroDTO.getNome_livro());
+            pstm.setInt(2, objLivroDTO.getId_livro());
+            pstm.execute();
+            pstm.close();
+        } catch (SQLException e) {
+            System.out.println("Erro no DAO");
+        }
+    }
 }

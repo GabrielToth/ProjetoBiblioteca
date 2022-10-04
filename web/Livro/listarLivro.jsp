@@ -26,6 +26,10 @@
                     out.print("Código: " + lista.get(num).getId_livro() + "<br>");
                     out.print("Nome: " + lista.get(num).getNome_livro() + "<br>");
                     
+                    out.print("<a href='frmAlterarLivroVIEW.jsp?id="
+                    + lista.get(num).getId_livro() + "&nome="
+                    + lista.get(num).getNome_livro() + "'> Alterar </a>");
+                    
                     out.print("<a href='frmExcluirLivroVIEW.jsp?id="
                     + lista.get(num).getId_livro() + "&nome="
                     + lista.get(num).getNome_livro() + "'> Excluir </a>");
