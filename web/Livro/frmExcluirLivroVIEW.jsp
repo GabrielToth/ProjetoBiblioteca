@@ -14,10 +14,10 @@
     <body>
         <form action="excluirLivro.jsp" method="POST">
            
-           <label>Id do Livro</label> <br>
+           <label>Código do Livro: </label> <br>
            <input type="text" name="id" value="<%=request.getParameter("id")%>">
            <br>
-           <label>Nome do Livro</label> <br>
+           <label>Nome do Livro: </label> <br>
            <input type="text" name="nome" value="<%=request.getParameter("nome")%>">
            <br>
            <button type="submit">Excluir</button>

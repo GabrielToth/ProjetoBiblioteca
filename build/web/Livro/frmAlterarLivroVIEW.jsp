@@ -20,7 +20,7 @@
            <label>Nome do Livro</label> <br>
            <input type="text" name="nome" value="<%=request.getParameter("nome")%>">
            <br>
-           <button type="submit">Excluir</button>
+           <button type="submit">Alterar</button>
        </form>
     </body>
 </html>

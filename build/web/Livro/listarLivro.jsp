@@ -32,9 +32,9 @@
                     
                     out.print("<a href='frmExcluirLivroVIEW.jsp?id="
                     + lista.get(num).getId_livro() + "&nome="
-                    + lista.get(num).getNome_livro() + "'> Excluir </a>");
+                    + lista.get(num).getNome_livro() + "'> Excluir </a><br><br>");
                 }
-                %> <br><br> <% 
+                
             } catch (Exception e) {
                 System.out.println("Erro de listagem de livro");
             }

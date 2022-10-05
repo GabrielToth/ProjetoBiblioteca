@@ -15,12 +15,13 @@ public class LivroDAO {
     
     public void CadastrarLivro(LivroDTO objLivroDTO) throws ClassNotFoundException, SQLException {
         String sql = "INSERT INTO livro (nome_livro) VALUES (?)";
-        //String sql = "insert into livro {nome_livro, qnt_pag, sla} values {?,?,?}"; etc..
+        //String sql = "insert into livro (nome_livro, qnt_pag, sla) values (?,?,?)"; etc..
         con = new ConexaoDAO().conexaoDB();
         
         try {
             pstm = con.prepareStatement(sql);
             pstm.setString(1, objLivroDTO.getNome_livro());
+            //Se fosse int usaria setInt, setDouble, etc...
             pstm.execute();
             pstm.close();
         } catch (SQLException e) {
@@ -29,7 +30,7 @@ public class LivroDAO {
     }
     
     public ArrayList<LivroDTO> PesquisarLivro() throws ClassNotFoundException {
-        String sql = "select * from livro";
+        String sql = "SELECT * FROM  livro";
         con = new ConexaoDAO().conexaoDB();
         
         try {
@@ -68,7 +69,7 @@ public class LivroDAO {
     }
     
     public void AlterarLivro(LivroDTO objLivroDTO) throws ClassNotFoundException, SQLException {
-        String sql = "update livro set nome_livro = 'novo_nome' where id_livro = ?";
+        String sql = "update livro set nome_livro = ? where id_livro = ?";
         //String sql = "insert into livro {nome_livro, qnt_pag, sla} values {?,?,?}"; etc..
         con = new ConexaoDAO().conexaoDB();
         

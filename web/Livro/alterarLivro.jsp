@@ -19,11 +19,13 @@
                 LivroDTO objLivroDTO = new LivroDTO();
                 objLivroDTO.setId_livro
                 (Integer.parseInt(request.getParameter("id")));
-                objLivroDTO.setNome_livro(request.getParameter("id"));
+                objLivroDTO.setNome_livro(request.getParameter("nome"));
                 System.out.println(objLivroDTO.getNome_livro());
             
                 LivroDAO objLivroDAO = new LivroDAO();
                 objLivroDAO.AlterarLivro(objLivroDTO);
+                out.print("<a href='listarLivro.jsp'> </a>");
+                
             } catch (Exception e) {
                 System.out.println("Erro no inserir");
             }
